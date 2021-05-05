@@ -1,0 +1,136 @@
+ul,ol{
+    list-style: none;
+}
+.linkNav{
+    list-style: none;
+    text-decoration: none;
+   position: relative;
+  color: #929598;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 5px 0 5px 5px;
+    display: block;
+    font-weight:600;
+}
+.navMenu{
+    position: relative;
+    width: max-content;
+    padding-left: 2px;
+    margin-left: 20px;
+    margin-top: 0px;
+}
+.navMenu::before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 1px;
+    right: 118%;
+    bottom: 9%;
+    background-color: black;
+}
+
+.linkNav::before{
+    position: absolute;
+    width: 12px;
+    height: 1px;
+    background-color: black;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    content: "";
+}
+
+.managerment{
+    padding-left: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+.Insights{
+    text-decoration: none;
+    padding-left: 15px;
+    color: black;
+    font-weight: 700;
+    line-height: 30px;
+}
+/* /////////// */
+
+.header_tab{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.text_01{
+    font-weight: bold;
+}
+
+.btn{
+    width: 120px;
+  background-color: #4e92ec;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+.__search_input{
+    display: flex;
+    flex: 1;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+    height: 30px;
+    align-items: center;    
+}
+
+.__table{
+    margin-top: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+    font-size: 15px;
+  padding: 10px;
+
+}
+
+.host{
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: black;
+}
+
+.tr_hover:hover{
+    background-color: rgb(235, 232, 232);
+    cursor: pointer;
+}
+
+.col_name{
+    width: 20%;
+}
+
+.select_dot{
+    width: 5%;
+    color: brown;
+}
+
+.select_dot:hover{
+    color: red;
+}
+
+
+/* tr:nth-child(even) {
+  background-color: #dddddd;
+} */

@@ -1,0 +1,77 @@
+.pop_up_input{
+  position: absolute;
+  margin-top: 5px;
+  border-radius: 5px;
+   border-style: solid;
+  border-color: #ccc;
+  border-width: 1px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 50;
+}
+
+.pop_up_input .create_entity{
+  height: 50px;
+  background-color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: #ccc;
+}
+
+.pop_up_input .suggestions{
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.pop_up_input .suggestions .suggestions_item{
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px 10px 10px 15px;
+  border-radius: 8px;
+}
+
+  .pop_up_input .suggestions .suggestions_item:hover{
+    background-color: rgb(228, 224, 224);
+  }
+
+.pop_up_input .suggestions .suggestions_item .text1_suggestions_item{
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+.pop_up_input .suggestions .suggestions_item .text2_suggestions_item{
+  font-size: 12px;
+}
+
+.pop_up_input .create_entity .input_create{
+  border-style: solid;
+  border-color: #ccc;
+  border-radius: 4px;
+  width: 40%;
+  border-width: 1px;
+  height: 30px;
+  overflow: hidden;
+  display:flex ;
+  align-items: center;
+}
+
+.pop_up_input .create_entity .btn_create{
+  width: 120px;
+  background-color: #5c3bbf;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 13px;
+  border-radius: 5px;
+}

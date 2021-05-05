@@ -1,0 +1,150 @@
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.chat-tab {
+  width: 85%;
+  height: 95%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  /* overflow: fixed; */
+}
+.box-chat {
+  width: 100%;
+  margin: 15px auto;
+  height: 90%;
+  overflow: scroll;
+}
+
+.boss-chat {
+  max-width: 55%;
+  width: max-content;
+  color: white;
+  padding: 20px;
+  border-radius: 25px;
+  margin: 10px 20px;
+  font-size: 18px;
+  clear: both;
+  background-color: #7f8686;
+}
+.boss-chat h5,
+.user-chat h5 {
+  margin: 0;
+}
+.user-chat {
+  max-width: 55%;
+  width: max-content;
+  color: white;
+  padding: 20px;
+  border-radius: 25px;
+  margin: 10px 20px;
+  font-size: 18px;
+  background-color: #63b3b0;
+  clear: both;
+  float: right;
+}
+.chat-send {
+  position: absolute;
+  bottom: 0;
+  width: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 5%;
+  /* background-color: #63b3b0; */
+}
+.chat-send input {
+  border: none;
+  background-color: transparent;
+  color: black;
+  font-size: 18px;
+  padding: 15px;
+  border-bottom: 1px solid rgb(233, 233, 233);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px 4px rgba(92, 59, 191, 0.4);
+  outline: none;
+  /* transform: translateX(-50%); */
+  height: 100%;
+  /* background-color: #4c8f8d; */
+}
+.chat-send input::placeholder {
+  color: white;
+}
+/* width */
+.box-chat::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.box-chat::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.box-chat::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.603);
+}
+
+/* Handle on hover */
+.box-chat::-webkit-scrollbar-thumb:hover {
+  background: rgba(117, 112, 112, 0.363);
+}
+
+.sendbtn {
+  position: absolute;
+  right: 0;
+  top: 0%;
+  transform: translateY(-40%);
+  background-color: #5c3bbf;
+  margin: 0;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  padding: 8px 15px;
+}
+.resetbtn {
+  position: absolute;
+  right: 80px;
+  top: 0%;
+  transform: translateY(-40%);
+  background-color: #5c3bbf;
+  margin: 0;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  padding: 8px 15px;
+}
+/* ======================== */
+.inputTag {
+  outline: none;
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  font-size: 18px;
+  padding-left: 10px;
+}
+.btnSave {
+  position: absolute;
+  right: 5px;
+  background-color: #5c3bbf;
+  color: white;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+  font-size: 16px;
+  width: 110px;
+  top: 3px;
+  display: flex;
+  justify-content: center;
+}
+.btnSave:hover {
+  background-color: #402591;
+}
