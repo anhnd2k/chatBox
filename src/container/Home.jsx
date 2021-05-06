@@ -19,8 +19,10 @@ function Card({ card, onChangeCard, indexSelect, onDeleteCard }) {
   const [valueUrl, setValueUrl] = React.useState("")
   const [valueNameKnot, setNameKnot] = React.useState("")
   const [valiDateUrlInput, setValiDateUrlInput] = React.useState(false)
+  const [valiadateTextKnot, setValidateTextKnot] = React.useState(false)
   const { title, subtitle, image, buttons } = card
-  const [text,setText] = React.useState(null)
+  const [text, setText] = React.useState(null)
+  const [idx, setIdx] = React.useState(null)
    // model
   const openModal = () => {
     setIsOpen(true)
@@ -63,8 +65,22 @@ function Card({ card, onChangeCard, indexSelect, onDeleteCard }) {
     setValueUrl("")
   }
 
-  const onchangeText = (nameKnot) => {
-
+  const onchangeText = (text) => {
+    if (!text) {
+      setValidateTextKnot(true)
+      return
+    }
+    if (text) {
+      const btns = Array.from(card.buttons)
+      btns[idx] = {text}
+      onChangeCard({
+        ...card,
+        buttons: btns
+      })
+      closeModal2()
+      setIdx(null)
+      setNameKnot("")
+    }
   }
   return (
     <div style={{
@@ -95,17 +111,18 @@ function Card({ card, onChangeCard, indexSelect, onDeleteCard }) {
       </div>
       {buttons && buttons.map((b, idx) => (
         <button key={idx} onClick={() => {
-          // openModal2()
-          const text = prompt("Nhập tên nút", b.text) 
+          openModal2()
+          setIdx(idx)
+          // const text = prompt("Nhập tên nút", b.text) 
           // const payload = prompt("Nhập payload", b.payload) 
-          if (text) {
-            const btns = Array.from(card.buttons)
-            btns[idx] = {text}
-            onChangeCard({
-              ...card,
-              buttons: btns
-            })
-          }
+          // if (text) {
+          //   const btns = Array.from(card.buttons)
+          //   btns[idx] = {text}
+          //   onChangeCard({
+          //     ...card,
+          //     buttons: btns
+          //   })
+          // }
         }}>{b.text}</button>
       ))}
       <button onClick={() => onChangeCard({ ...card, buttons: [...card.buttons, { text: '<rỗng>', payload: '' }] })}>+</button>
@@ -146,8 +163,8 @@ function Card({ card, onChangeCard, indexSelect, onDeleteCard }) {
           style={customStyles}
         >
         <div style={{marginBottom:20}}>Nhập tên nút</div>
-        <input value={valueNameKnot} onChange={(event) => [setNameKnot(event.target.value)]} style={{ width: 300, fontSize: 16 }} />
-          {valiDateUrlInput && <div style={{fontSize: 10, color:"#e26060"}}>Vui lòng nhập tên nút</div>}
+        <input value={valueNameKnot} onChange={(event) => [setNameKnot(event.target.value), setValidateTextKnot(false)]} style={{ width: 300, fontSize: 16 }} />
+          {valiadateTextKnot && <div style={{fontSize: 10, color:"#e26060"}}>Vui lòng nhập tên nút</div>}
             <div style={{ display: "flex", justifyContent: "space-around", marginTop:20}}>
               <button onClick={() => closeModal2()} style={{backgroundColor:"#ccc", color:"#e26060", fontWeight:"700"}} className={"btnToggleUtter"}>Thoát</button>
               <button onClick={() => onchangeText(valueNameKnot)} style={{fontWeight:"700"}} className={"btnToggleUtter"}>Chọn</button>
